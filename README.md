@@ -5,6 +5,8 @@ A bootstrap framework for generating Go images
 
 ## How does it work?
 
+When starting a new project, clone this repository, and then follow the steps below.
+
 First, edit the `.env` file to include your own information:
 
 Example:
