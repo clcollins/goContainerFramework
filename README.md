@@ -18,7 +18,7 @@ GOPATH_SRC_DIR="github.com/clcollins"
 GOLANG_IMAGE="golang:1.8"
 ```
 
-Write your go files and tests.  These files will be built and tested in the `Dockerfile-builder` image, and the generated binaries will be copied into a `./pkg` directory and inserted into the resulting `scratch` image.
+Write your go files and tests.  The main one should match what you set the `APPNAME` value to in your .env file - using the example above: `goApp.go`.  These files will be built and tested in the `Dockerfile-builder` image, and the generated binaries will be copied into a `./pkg` directory and inserted into the resulting `scratch` image.
 
 Do all the building automatically by running the `build.sh` file.
 
