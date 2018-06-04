@@ -38,7 +38,7 @@ app_dockerfile="Dockerfile"
 
 function cleanup() {
   echo "Cleaning up..."
-  if $(docker ps -a | grep $builder)
+  if $(docker ps -a | awk -v builder="$builder" '/$builder/ {print $1}')
   then
     docker rm $builder
   fi
@@ -84,6 +84,8 @@ populate_dockerfile() {
 }
 
 main() {
+  # Remove any builder images that might be there already
+  cleanup
 
   populate_dockerfile_builder
   build_binary
