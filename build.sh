@@ -38,7 +38,7 @@ app_dockerfile="Dockerfile"
 
 function cleanup() {
   echo "Cleaning up..."
-  if $(docker ps -a | awk -v builder="$builder" '/$builder/ {print $1}')
+  if $(docker ps -a) | grep $builder
   then
     docker rm $builder
   fi
