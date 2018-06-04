@@ -4,6 +4,7 @@
 # Gets its appname from the directory name
 
 set -o errexit
+set -o nounset
 
 if [[ -f .env ]]
 then
