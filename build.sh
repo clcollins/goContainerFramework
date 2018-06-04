@@ -56,7 +56,7 @@ function build_binary() {
   
   mkdir -p ./pkg
   
-  docker cp ${builder}:${bindir}/${appname} ./pkg
+  docker cp ${builder}:${bindir}/${appname}/. ./pkg/
 }
 
 function build_image() {
