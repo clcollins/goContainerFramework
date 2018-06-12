@@ -56,7 +56,7 @@ function build_binary() {
   
   mkdir -p ./pkg
   
-  docker cp ${builder}:${bindir}/${appname}/. ./pkg/
+  docker cp ${builder}:${appdir}/. ./pkg/
 }
 
 function build_image() {
@@ -85,7 +85,6 @@ populate_dockerfile() {
 }
 
 main() {
-  # Remove any builder images that might be there already
   cleanup
 
   populate_dockerfile_builder
